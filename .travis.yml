@@ -11,4 +11,4 @@ before_script:
 script:
   python bdd/tests/features/CalculadoraTest.py &&
   coverage run --branch bdd/tests/features/CalculadoraTest.py &&
-  lettuce bdd/test
+  lettuce bdd/tests

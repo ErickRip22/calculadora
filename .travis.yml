@@ -1,9 +1,14 @@
---- 
-before_script: 
-  - "autopep8 -ir *"
-  - "flake8 --max-complexity=5 --exclude=*.txt,*.md,*.pyc *"
-install: "pip install -r requerimientos.txt"
-languaje: "python"
-python: 
+language: python
+python:
   - "2.7"
-script: "python bdd/tests/features/CalculadoraTest.py && coverage run --branch bdd/tests/features/CalculadoraTest.py && lettuce bdd/tests/"
+install:
+  "pip install -r requerimientos.txt"
+
+before_script:
+  - autopep8 -ir *
+  - flake8 --max-complexity=5 --exclude=*.txt,*.md,*.pyc *
+
+script:
+  python bdd/tests/features/CalculadoraTest.py
+  coverage run --branch bdd/tests/features/CalculadoraTest.py
+  lettuce bdd/test

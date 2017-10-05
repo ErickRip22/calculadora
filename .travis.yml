@@ -9,6 +9,6 @@ before_script:
   - flake8 --max-complexity=5 --exclude=*.txt,*.md,*.pyc *
 
 script:
-  python bdd/tests/features/CalculadoraTest.py
-  coverage run --branch bdd/tests/features/CalculadoraTest.py
+  python bdd/tests/features/CalculadoraTest.py &&
+  coverage run --branch bdd/tests/features/CalculadoraTest.py &&
   lettuce bdd/test
